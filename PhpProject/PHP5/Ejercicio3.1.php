@@ -6,7 +6,12 @@
 <body>
     <?php
     
+    $num = $_POST['num'];
     
-    ?>
+    $num = array();
+    
+    echo $num;
+    
+    ?>  
 </body>
 </html>
