@@ -10,23 +10,25 @@
     $contador = $_POST['cont'];
     $numeroTexto = $_POST['numeroTexto'];
 
-
-     foreach ($numero as $num) {
+    $numeroTexto .= "," . $num;
+    $numeroTexto = substr($numeroTexto, 2);
+    $numero = explode(",", $numeroTexto);
+    
+        foreach ($numero as $num) {
          if ($num < $minimo) {
            $minimo = $num;
-         }
-         if ($num > $maximo) {
-           $maximo = $num;
-         }
+         }else if($num > $maximo){
+             $maximo = $num;
+        }
         }
 
         foreach ($numero as $num) {
           if ($num == $minimo) {
-            echo "$num mínimo<br>";
+            echo $num ," mínimo<br>";
          } else if ($num == $maximo) {
-           echo "$num máximo<br>";
+           echo $num, " máximo<br>";
          } else {
-           echo "$num<br>";
+           echo $num, "<br>";
          }
         }
     
@@ -34,11 +36,10 @@
     if (($contador < 10) || (!isset($num))) {
      ?>
      <form action="#" method="post">
-          <input type="hidden" name="ejercicio">
           Introduzca un número:
          <input type="number" name ="num" autofocus>
-         <input type="hidden" name="cont" value="<?= ++$contador ?>">
-         <input type="hidden" name="numeroTexto" value="<?= $numeroTexto . " " . $num ?>">
+         <input type="hidden" name="cont" value="<?php echo ++$contador; ?>">
+         <input type="hidden" name="numeroTexto" value="<?php echo $numeroTexto . "," . $num; ?>">
          <input type="submit" value="OK">
         </form>
     <?php
