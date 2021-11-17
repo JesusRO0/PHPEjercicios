@@ -2,7 +2,6 @@
 
 h1{
     font-family:sans-serif;
-    text-align:justify;
     font-weight:bold;
     color:deepskyblue;
     text-decoration:underline;
@@ -10,13 +9,11 @@ h1{
 
 h2{
     font-family:sans-serif;
-    text-align:justify;
     text-decoration:underline;
 }
 
 h3,p,mark{
     font-family:sans-serif;
-    text-align:justify;
 }
 
 a:link{
@@ -31,7 +28,8 @@ li a{
 body{
     background-color:azure;
     width: 1200px; 
-    margin: 0 auto; 
+    margin: 0 auto;
+    text-align:justify;
 }
 
 a:hover{
