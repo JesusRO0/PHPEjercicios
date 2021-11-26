@@ -7,45 +7,49 @@
     <h3>Introduce un número.</h3>
     <form action="#" method="post">
     Número: <input type="number" name="num">
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar"><br><br>
     </form>
     <?php
-    
-    function esCapicua(){
-        
+
+    if(!isset($num)){
+        $num=0;
+    }
+
+    function primo(){
+
         $num = $_POST['num'];
-        $primera_cifra=0;
-        $segunda_cifra=0;
-        $penultima_cifra=0;
-        $ultima_cifra=0;
-        
-        if($num < 10){
-            
-        }elseif($num>=10 && $num < 100){
-            $primera_cifra = $num/10;
-            $primera_cifra = floor($primera_cifra);
-            $ultima_cifra = $num%10; 
-        }elseif($num >= 100 && $num < 1000){
-            $segunda_cifra=$num/100;
-            $segunda_cifra= floor($segunda_cifra);
-            $segunda_cifra=$segunda_cifra%10;
-            $penultima_cifra = floor($penultima_cifra);
-            $penultima_cifra = $penultima_cifra%10;
-        }elseif($num >= 1000 && $num < 10000){
-            $primera_cifra = $num/1000;
-            $primera_cifra = floor($primera_cifra);
-            $ultima_cifra = $num%10;
+
+        if ($num == 2 || $num == 3 || $num == 5 || $num == 7) {
+
+            echo "Es primo ", $num;
+            return True;
+
+        } else {
+
+            //comprobamos si es par
+            if ($num % 2 != 0) {
+
+                //comprobamos solo por los impares
+                for ($i = 3; $i <= sqrt($num); $i += 2) {
+
+                    if ($num % $i == 0) {
+
+                        echo "No es primo ", $num;
+                        return false;
+
+                    }
+
+                }
+                echo "Es primo ", $num;
+                return true;
+
+            }
+
         }
-        
-        if($penultima_cifra == $ultima_cifra && $segunda_cifra == $penultima_cifra){
-            echo "es capicua";
-        }else{
-            echo "no es capicua";
-        }
+
     }
     
-    esCapicua();
-    
+    primo();
     ?>  
 </body>
 </html>

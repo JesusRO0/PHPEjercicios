@@ -6,7 +6,7 @@
 <body>
     <?php
     
-    function digitos(){
+    function digitoN(){
     
     $num = $_POST['num'];
     $digito = $_POST['dig'];
@@ -44,7 +44,7 @@
            
     }
     
-    digitos();
+    digitoN();
     ?>
 </body>
 </html>

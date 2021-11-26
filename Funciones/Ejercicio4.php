@@ -26,6 +26,7 @@
               
               echo "$base<sup>$exponente</sup>, ";
               
+              
           } 
         }
         }

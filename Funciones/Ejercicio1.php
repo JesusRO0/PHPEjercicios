@@ -39,8 +39,12 @@
         
         if($penultima_cifra == $ultima_cifra && $segunda_cifra == $penultima_cifra){
             echo "es capicua";
+            $capicua=true;
+            return $capicua;
         }else{
             echo "no es capicua";
+            $capicua=false;
+            return $capicua;
         }
     }
     
