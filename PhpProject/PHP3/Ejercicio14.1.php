@@ -8,7 +8,7 @@
 
     $num = $_GET["a"];
     
-    if($num %2 ==0){
+    if($num %2 == 0){
         echo "El número $num es PAR.";
     }else{
         echo "El número $num es IMPAR ";
